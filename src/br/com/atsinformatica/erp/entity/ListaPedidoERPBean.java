@@ -1,0 +1,189 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package br.com.atsinformatica.erp.entity;
+
+import com.towel.el.annotation.Resolvable;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Date;
+
+/**
+ * Bean de Listar Pedidos ERP
+ * @author kennedimalheiros
+ */
+public class ListaPedidoERPBean {
+    @Resolvable(colName = "Cód. Pedido ERP")
+    private String codPedidoResulth;
+    @Resolvable(colName = "Cód. Pedido Loja")
+    private int codPedidoEcom;
+    @Resolvable(colName = "Referência Pedido")
+    private String codReferencia;
+    @Resolvable(colName = "Cliente")
+    private String cliente;
+    @Resolvable(colName = "Valor")
+    private Double valor;
+    @Resolvable(colName = "Status")
+    private String status;
+    @Resolvable(colName = "Data do Pedido")
+    private Date dataPedido;
+    @Resolvable(colName = "Forma de Pagamento")
+    private String formaPagamento;
+    private Date dataFinalizacaoPedido;
+    private Date dataEnvioPedidoEcom;
+    private String codRastreiaEcom;
+    private String numDocumetoEntrega;
+    private Date dtIni;
+    private Date dtFim;
+    
+    
+    public ListaPedidoERPBean(ResultSet rs) throws SQLException{
+        this.codPedidoResulth = rs.getString("CODPEDIDO");       
+        this.codPedidoEcom    = rs.getInt("IDPEDIDOECOM");    
+        this.codReferencia    = rs.getString("CODPEDIDOECOM");
+        this.cliente          = rs.getString("NOME").toUpperCase();         
+        this.valor            = rs.getDouble("TOTALPEDIDO") + rs.getDouble("FRETE");  
+        this.status           = rs.getString("STATUSPEDIDOECOM"); 
+        this.dataPedido       = rs.getDate("DATAPEDIDO");
+        this.formaPagamento   = rs.getString("OBSERVACAO");       
+    }
+
+    public ListaPedidoERPBean() {
+    }
+    
+    
+
+    public String getCodPedidoResulth() {
+        return codPedidoResulth;
+    }
+
+    public void setCodPedidoResulth(String codPedidoResulth) {
+        this.codPedidoResulth = codPedidoResulth;
+    }
+
+    public int getCodPedidoEcom() {
+        return codPedidoEcom;
+    }
+
+    public void setCodPedidoEcom(int codPedidoEcom) {
+        this.codPedidoEcom = codPedidoEcom;
+    }
+
+    public String getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(String cliente) {
+        this.cliente = cliente;
+    }
+
+    public Double getValor() {
+        return valor;
+    }
+
+    public void setValor(Double valor) {
+        this.valor = valor;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public Date getDataPedido() {
+        return dataPedido;
+    }
+
+    public void setDataPedido(Date dataPedido) {
+        this.dataPedido = dataPedido;
+    }
+
+    public String getFormaPagamento() {
+        return formaPagamento;
+    }
+
+    public void setFormaPagamento(String formaPagamento) {
+        this.formaPagamento = formaPagamento;
+    }
+
+//    public Date getHoraIntegracao() {
+//        return horaIntegracao;
+//    }
+//
+//    public void setHoraIntegracao(Date horaIntegracao) {
+//        this.horaIntegracao = horaIntegracao;
+//    }
+
+    public Date getDataFinalizacaoPedido() {
+        return dataFinalizacaoPedido;
+    }
+
+    public void setDataFinalizacaoPedido(Date dataFinalizacaoPedido) {
+        this.dataFinalizacaoPedido = dataFinalizacaoPedido;
+    }
+
+    public Date getDataEnvioPedidoEcom() {
+        return dataEnvioPedidoEcom;
+    }
+
+    public void setDataEnvioPedidoEcom(Date dataEnvioPedidoEcom) {
+        this.dataEnvioPedidoEcom = dataEnvioPedidoEcom;
+    }
+
+    public String getCodRastreiaEcom() {
+        return codRastreiaEcom;
+    }
+
+    public void setCodRastreiaEcom(String codRastreiaEcom) {
+        this.codRastreiaEcom = codRastreiaEcom;
+    }
+
+    public String getNumDocumetoEntrega() {
+        return numDocumetoEntrega;
+    }
+
+    public void setNumDocumetoEntrega(String numDocumetoEntrega) {
+        this.numDocumetoEntrega = numDocumetoEntrega;
+    }
+
+    public Date getDtIni() {
+        return dtIni;
+    }
+
+    public void setDtIni(Date dtIni) {
+        this.dtIni = dtIni;
+    }
+
+    public Date getDtFim() {
+        return dtFim;
+    }
+
+    public void setDtFim(Date dtFim) {
+        this.dtFim = dtFim;
+    }
+
+    /**
+     * @return the codReferencia
+     */
+    public String getCodReferencia() {
+        return codReferencia;
+    }
+
+    /**
+     * @param codReferencia the codReferencia to set
+     */
+    public void setCodReferencia(String codReferencia) {
+        this.codReferencia = codReferencia;
+    }
+    
+    
+    
+    
+    
+}

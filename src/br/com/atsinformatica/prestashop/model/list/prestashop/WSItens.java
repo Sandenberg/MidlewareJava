@@ -1,0 +1,226 @@
+package br.com.atsinformatica.prestashop.model.list.prestashop;
+
+import br.com.atsinformatica.prestashop.model.list.Carriers;
+import br.com.atsinformatica.prestashop.model.list.StockAvailables;
+import br.com.atsinformatica.prestashop.model.list.Categories;
+import br.com.atsinformatica.prestashop.model.list.Combinations;
+import br.com.atsinformatica.prestashop.model.list.Images;
+import br.com.atsinformatica.prestashop.model.list.OrderPendings;
+import br.com.atsinformatica.prestashop.model.list.OrderStates;
+import br.com.atsinformatica.prestashop.model.list.Orders;
+import br.com.atsinformatica.prestashop.model.list.ProductFeatures;
+import br.com.atsinformatica.prestashop.model.list.ProductOptionValues;
+import br.com.atsinformatica.prestashop.model.list.ProductOptions;
+import br.com.atsinformatica.prestashop.model.list.Products;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "", propOrder = {
+    "productFeatures",
+    "products",
+    "categories",
+    "combinations",
+    "images",
+    "productOptions",
+    "productOptionValues",
+    "stockAvailables",
+    "orders",
+    "carriers",
+    "orderPendings",
+    "orderStates",
+})
+//@XmlRootElement(name = "prestashop")
+public class WSItens {
+
+    @XmlAttribute(name = "xmlns:xlink", required = true)
+    protected String xmlns = "http://www.w3.org/1999/xlink";
+    
+    @XmlElement(name = "product_features")
+    protected ProductFeatures productFeatures;
+    
+    @XmlElement(name = "products")
+    protected Products products;
+    
+    @XmlElement(name = "categories")
+    protected Categories categories;
+    
+    @XmlElement(name = "images")
+    private Images images;
+    
+    @XmlElement(name = "combinations")
+    private Combinations combinations;
+    
+    @XmlElement(name = "stock_availables")
+    private StockAvailables stockAvailables;
+    
+    @XmlElement(name = "product_options")
+    private ProductOptions productOptions;
+    
+    @XmlElement(name = "product_option_values")
+    private ProductOptionValues productOptionValues;
+    
+    @XmlElement(name = "orders")
+    private Orders orders;
+    
+    @XmlElement(name = "order_pending")
+    private OrderPendings orderPendings;
+    
+    @XmlElement(name = "carriers")
+    private Carriers carriers;
+    
+    @XmlElement(name = "order_states")
+    private OrderStates orderStates;
+
+    //----------Getters e Setters-----------------//
+    
+    public ProductFeatures getProductFeatures() {
+        return productFeatures;
+    }
+
+    public void setProductFeatures(ProductFeatures productFeatures) {
+        this.productFeatures = productFeatures;
+    }
+
+    public Products getProducts() {
+        return products;
+    }
+
+    public void setProducts(Products products) {
+        this.products = products;
+    }
+
+    public Categories getCategories() {
+        return categories;
+    }
+
+    public void setCategories(Categories categories) {
+        this.categories = categories;
+    }
+
+    /**
+     * @return the images
+     */
+    public Images getImages() {
+        return images;
+    }
+
+    /**
+     * @param images the images to set
+     */
+    public void setImages(Images images) {
+        this.images = images;
+    }
+
+    /**
+     * @return the combinations
+     */
+    public Combinations getCombinations() {
+        return combinations;
+    }
+
+    /**
+     * @param combinations the combinations to set
+     */
+    public void setCombinations(Combinations combinations) {
+        this.combinations = combinations;
+    }
+
+    /**
+     * @return the stockAvailables
+     */
+    public StockAvailables getStockAvailables() {
+        return stockAvailables;
+    }
+
+    /**
+     * @param stockAvailables the stockAvailables to set
+     */
+    public void setStockAvailables(StockAvailables stockAvailables) {
+        this.stockAvailables = stockAvailables;
+    }
+
+    /**
+     * @return the productOptions
+     */
+    public ProductOptions getProductOptions() {
+        return productOptions;
+    }
+
+    /**
+     * @param productOptions the productOptions to set
+     */
+    public void setProductOptions(ProductOptions productOptions) {
+        this.productOptions = productOptions;
+    }
+
+    /**
+     * @return the productOptionValues
+     */
+    public ProductOptionValues getProductOptionValues() {
+        return productOptionValues;
+    }
+
+    /**
+     * @param productOptionValues the productOptionValues to set
+     */
+    public void setProductOptionValues(ProductOptionValues productOptionValues) {
+        this.productOptionValues = productOptionValues;
+    }
+
+    /**
+     * @return the orders
+     */
+    public Orders getOrders() {
+        return orders;
+    }
+
+    /**
+     * @param orders the orders to set
+     */
+    public void setOrders(Orders orders) {
+        this.orders = orders;
+    }
+
+    public Carriers getCarriers() {
+        return carriers;
+    }
+
+    public void setCarriers(Carriers carriers) {
+        this.carriers = carriers;
+    }
+
+    /**
+     * @return the orderPendings
+     */
+    public OrderPendings getOrderPendings() {
+        return orderPendings;
+    }
+
+    /**
+     * @param orderPendings the orderPendings to set
+     */
+    public void setOrderPendings(OrderPendings orderPendings) {
+        this.orderPendings = orderPendings;
+    }
+
+    /**
+     * @return the orderStates
+     */
+    public OrderStates getOrderStates() {
+        return orderStates;
+    }
+
+    /**
+     * @param orderStates the orderStates to set
+     */
+    public void setOrderStates(OrderStates orderStates) {
+        this.orderStates = orderStates;
+    }
+
+ 
+
+}
